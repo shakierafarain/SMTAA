@@ -102,3 +102,10 @@ function highlightAndScroll(term) {
     firstMatchElement.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 }
+
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});

@@ -448,3 +448,54 @@ nav {
   border-radius: 3px;
 }
 
+/* Hamburger button */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* hide by default */
+    flex-direction: column;
+    width: 100%;
+    background: #006400;
+    position: absolute;
+    top: 60px; /* below navbar */
+    left: 0;
+    padding: 20px 0;
+  }
+
+  .nav-links li {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .nav-links.show {
+    display: flex; /* show when toggled */
+  }
+
+  .hamburger {
+    display: block;
+    color: #fff;
+  }
+
+  /* Make search bar full width on mobile */
+  .search-bar {
+    margin: 10px auto;
+    width: 90%;
+  }
+
+  .search-bar input {
+    width: 100%;
+  }
+}
+
+.nav-links a.active {
+  color: #ffcc00;  /* or any highlight color */
+  font-weight: 700;
+  border-bottom: 2px solid #ffcc00; /* optional underline */
+}
+
