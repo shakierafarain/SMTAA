@@ -47,55 +47,57 @@
     </div>
   </header>
 
-  <!-- Pengenalan section -->
-  <section class="card">
-    <div class="text">
+  <!-- 3 Boxes -->
+  <section class="cards">
+    <div class="card-box pengenalan" onclick="openModal('pengenalan')">
       <h2>PENGENALAN</h2>
-      <p>
-        Sekolah Menengah Tahfiz Al Attas terletak di Pajam Mantin Negeri Sembilan dan ditubuhkan sejak tahun 2017. 
-        Sekolah Menengah Tahfiz Al Attas ini merupakan sebuah sekolah yang berdaftar dengan Jabatan Hal Ehwal Agama Islam Negeri Sembilan (JAHEINS). 
-        Matlamat penubuhan SMTAA adalah untuk menaikkan martabat Al-Quran dan melahirkan banyak cendiakiawan tahfiz. 
-        Fokus utama SMTAA adalah memberikan peluang pendidikan untuk melayakkan pelajar lepasan tahfiz ke peringkat Diploma/TVET.
-      </p>
     </div>
-    <div class="image">
-      <img src="pengenalan.jpg" alt="Sekolah Menengah Tahfiz Al Attas">
+    <div class="card-box syarat" onclick="openModal('syarat')">
+      <h2>SYARAT KELAYAKAN</h2>
+    </div>
+    <div class="card-box kelebihan" onclick="openModal('kelebihan')">
+      <h2>KELEBIHAN FAST TRACK SPM</h2>
     </div>
   </section>
 
-  <!-- Syarat Kelayakan section -->
-  <section class="card reverse">
-    <div class="text">
+  <!-- Popups -->
+  <div id="pengenalan" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('pengenalan')">&times;</span>
+      <h2>PENGENALAN</h2>
+      <p>Sekolah Menengah Tahfiz Al Attas terletak di Pajam Mantin Negeri Sembilan dan ditubuhkan sejak tahun 2017. 
+        SMTAA berdaftar dengan JAHEINS. Matlamatnya adalah menaikkan martabat Al-Quran dan melahirkan cendiakiawan tahfiz. 
+        Fokus utama adalah peluang pendidikan untuk lepasan tahfiz ke peringkat Diploma/TVET.</p>
+    </div>
+  </div>
+
+  <div id="syarat" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('syarat')">&times;</span>
       <h2>SYARAT KELAYAKAN</h2>
       <ol>
-        <li>Berumur 17 - 20 tahun pada tahun memohon</li>
-        <li>Mempunyai sijil tamat madrasah tidak lebih dari 1 tahun</li>
-        <li>Menghafaz Al-Quran minima 5 juzuk</li>
-        <li>Berkemahiran membaca, menulis dan mengira</li>
-        <li>Sihat tubuh badan</li>
+        <li>Berumur 17 - 20 tahun.</li>
+        <li>Sijil tamat madrasah tidak lebih 1 tahun.</li>
+        <li>Hafazan minimum 5 juzuk.</li>
+        <li>Berkemahiran membaca, menulis & mengira.</li>
+        <li>Sihat tubuh badan.</li>
       </ol>
     </div>
-    <div class="image">
-      <img src="syaratkelayakan.jpg" alt="Syarat Kelayakan">
-    </div>
-  </section>
+  </div>
 
-  <!-- Kelebihan Fast Track SPM section -->
-  <section class="card">
-    <div class="text">
+  <div id="kelebihan" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('kelebihan')">&times;</span>
       <h2>KELEBIHAN FAST TRACK SPM</h2>
       <ol>
-        <li>Biasiswa pengajian dari Yayasan Pendidikan Bumiputera</li>
-        <li>Program yang diiktiraf oleh kerajaan (JAHEINS)</li>
-        <li>Peluang menyambung ke peringkat Diploma atau TVET</li>
-        <li>Mod pembelajaran secara akademik dan hafazan</li>
-        <li>Mempunyai barisan pensyarah yang berpengalaman</li>
+        <li>Biasiswa pengajian Yayasan Pendidikan Bumiputera.</li>
+        <li>Program diiktiraf kerajaan (JAHEINS).</li>
+        <li>Peluang sambung ke Diploma/TVET.</li>
+        <li>Akademik & hafazan.</li>
+        <li>Pensyarah berpengalaman.</li>
       </ol>
     </div>
-    <div class="image">
-      <img src="kelebihan fast track spm.jpg" alt="Kelebihan Fast Track SPM">
-    </div>
-  </section>
+  </div>
 
   <!-- Footer -->
   <footer>
