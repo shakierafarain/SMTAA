@@ -13,110 +13,165 @@
   <!-- Navigation Bar -->
   <nav>
     <div class="logo">
-      <a href="fasiliti.html">
+      <a href="index.html">
         <img src="logo SMTAA.jpg" alt="SMTAA Logo">
         <span>SM Tahfiz Al Attas</span>
       </a>
     </div>
     <ul class="nav-links" id="navLinks">
-  <li><a href="index.html">Utama</a></li>
-  <li><a href="fasiliti.html" class="active">Fasiliti</a></li>
-  <li><a href="pembelajaran.html">Pembelajaran</a></li>
-  <li><a href="testimoni.html">Testimoni</a></li>
-  <li><a href="hubungi.html">Hubungi</a></li>
-  <li>
-    <form id="searchForm" class="search-bar">
-      <input type="text" id="searchInput" placeholder="Cari...">
-      <button type="submit"><i class="fas fa-search"></i></button>
-    </form>
-  </li>
-</ul>
+      <li><a href="index.html">Utama</a></li>
+      <li><a href="fasiliti.html" class="active">Fasiliti</a></li>
+      <li><a href="pembelajaran.html">Pembelajaran</a></li>
+      <li><a href="testimoni.html">Testimoni</a></li>
+      <li><a href="hubungi.html">Hubungi</a></li>
+      <li>
+        <form id="searchForm" class="search-bar">
+          <input type="text" id="searchInput" placeholder="Cari...">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </li>
+    </ul>
 
-<!-- Hamburger Menu Button -->
-<div class="hamburger" id="hamburger">
-  <i class="fas fa-bars"></i>
-</div>
+    <div class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
   </nav>
 
   <!-- Hero section -->
   <header class="hero small-hero">
     <div class="hero-content">
       <h1>FASILITI</h1>
-      <p>Kemudahan lengkap untuk keselesaan pembelajaran</p>
+      <p>Kemudahan lengkap untuk keselesaan pelajar</p>
     </div>
   </header>
 
-  <!-- Fasiliti Sections -->
-  <main class="fasiliti-container">
+  <!-- Fasiliti Cards -->
+  <section class="cards">
+    <div class="card-box surau" onclick="openModal('surau')"><h2>Surau</h2></div>
+    <div class="card-box pelajar" onclick="openModal('pelajar')"><h2>Ruangan Pelajar</h2></div>
+    <div class="card-box cafe" onclick="openModal('cafe')"><h2>Cafeteria</h2></div>
+    <div class="card-box pengangkutan" onclick="openModal('pengangkutan')"><h2>Pengangkutan</h2></div>
+    <div class="card-box kelas" onclick="openModal('kelas')"><h2>Kelas</h2></div>
+    <div class="card-box dewan" onclick="openModal('dewan')"><h2>Dewan</h2></div>
+    <div class="card-box atm" onclick="openModal('atm')"><h2>Mesin ATM</h2></div>
+    <div class="card-box pos" onclick="openModal('pos')"><h2>Pos Pengawal</h2></div>
+    <div class="card-box parking" onclick="openModal('parking')"><h2>Parking</h2></div>
+    <div class="card-box asrama" onclick="openModal('asrama')"><h2>Asrama</h2></div>
+  </section>
 
-    <!-- Surau -->
-    <section class="fasiliti-section">
-      <h2>Ruangan Surau</h2>
-      <p>Tempat ibadah yang luas, tenang dan bersih untuk pelajar menunaikan solat serta aktiviti kerohanian.</p>
+  <!-- Modal Popups -->
+  <div id="surau" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('surau')">&times;</span>
+      <h2>Surau</h2>
       <div class="gallery">
-        <img src="ruangansurau1.jpg" alt="Ruangan Surau 1">
-        <img src="ruangansurau2.jpg" alt="Ruangan Surau 2">
-        <img src="ruangansurau3.jpg" alt="Ruangan Surau 3">
+        <img src="ruangansurau1.jpg" alt="Surau 1">
+        <img src="ruangansurau2.jpg" alt="Surau 2">
+        <img src="ruangansurau3.jpg" alt="Surau 3">
       </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- Ruangan Pelajar -->
-    <section class="fasiliti-section">
+  <div id="pelajar" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('pelajar')">&times;</span>
       <h2>Ruangan Pelajar</h2>
-      <p>Dilengkapi meja belajar dan suasana selesa untuk pembelajaran pelajar.</p>
       <div class="gallery">
-        <img src="ruanganpelajar1.jpg" alt="Ruangan Pelajar 1">
-        <img src="ruanganpelajar2.jpg" alt="Ruangan Pelajar 2">
-        <img src="ruanganpelajar3.jpg" alt="Ruangan Pelajar 3">
+        <img src="ruanganpelajar1.jpg" alt="Pelajar 1">
+        <img src="ruanganpelajar2.jpg" alt="Pelajar 2">
+        <img src="ruanganpelajar3.jpg" alt="Pelajar 3">
       </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- Cafeteria -->
-    <section class="fasiliti-section">
+  <div id="cafe" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('cafe')">&times;</span>
       <h2>Cafeteria</h2>
-      <p>Menyediakan makanan sihat dan seimbang dalam suasana bersih serta selesa untuk pelajar.</p>
       <div class="gallery">
         <img src="cafeteria1.jpg" alt="Cafeteria 1">
         <img src="cafeteria2.jpg" alt="Cafeteria 2">
         <img src="cafeteria3.jpg" alt="Cafeteria 3">
       </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- Pengangkutan -->
-    <section class="fasiliti-section">
+  <div id="pengangkutan" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('pengangkutan')">&times;</span>
       <h2>Pengangkutan</h2>
-      <p>Kemudahan bas yang selamat serta teratur untuk perjalanan pelajar.</p>
       <div class="gallery">
         <img src="pengangkutan1.jpg" alt="Pengangkutan 1">
         <img src="pengangkutan2.jpg" alt="Pengangkutan 2">
         <img src="pengangkutan3.jpg" alt="Pengangkutan 3">
       </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- Kelas -->
-    <section class="fasiliti-section">
+  <div id="kelas" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('kelas')">&times;</span>
       <h2>Kelas</h2>
-      <p>Dilengkapi peralatan pembelajaran dan persekitaran pembelajaran kondusif.</p>
       <div class="gallery">
         <img src="kelas1.jpg" alt="Kelas 1">
         <img src="kelas2.jpg" alt="Kelas 2">
         <img src="kelas3.jpg" alt="Kelas 3">
         <img src="kelas4.jpg" alt="Kelas 4">
       </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- Pendaftaran -->
-    <section class="fasiliti-section">
-      <h2>Pendaftaran Smart Tahfiz</h2>
-      <p>Ruang kaunter pendaftaran yang mesra ibu bapa serta pelajar baharu.</p>
+  <div id="dewan" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('dewan')">&times;</span>
+      <h2>Dewan</h2>
       <div class="gallery">
-        <img src="pendaftaransmarttahfiz1.jpg" alt="Pendaftaran 1">
-        <img src="pendaftaransmarttahfiz2.jpg" alt="Pendaftaran 2">
-        <img src="pendaftaransmarttahfiz3.jpg" alt="Pendaftaran 3">
+        <img src="dewan.jpg" alt="Dewan 1">
       </div>
-    </section>
+    </div>
+  </div>
 
-  </main>
+  <div id="atm" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('atm')">&times;</span>
+      <h2>Mesin ATM</h2>
+      <div class="gallery">
+        <img src="atm.png" alt="ATM 1">
+      </div>
+    </div>
+  </div>
+
+  <div id="pos" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('pos')">&times;</span>
+      <h2>Pos Pengawal</h2>
+      <div class="gallery">
+        <img src="pos.png" alt="Pos 1">
+      </div>
+    </div>
+  </div>
+
+  <div id="parking" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('parking')">&times;</span>
+      <h2>Parking</h2>
+      <div class="gallery">
+        <img src="park.png" alt="Parking 1">
+      </div>
+    </div>
+  </div>
+
+  <div id="asrama" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('asrama')">&times;</span>
+      <h2>Asrama</h2>
+      <div class="gallery">
+        <img src="asrama1.png" alt="Asrama 1">
+        <img src="asrama2.png" alt="Asrama 2">
+        <img src="asrama3.png" alt="Asrama 3">
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer>
