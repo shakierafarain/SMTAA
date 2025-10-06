@@ -56,6 +56,9 @@ body {
       font-size: 1.5rem;
       font-weight: 600;
       transition: transform 0.3s;
+      padding: 0 10px;
+      word-wrap: break-word;
+      white-space: normal;
     }
 
     .card-box:hover {
@@ -528,3 +531,15 @@ nav {
   font-weight: 700;
   border-bottom: 2px solid #ffcc00; /* optional underline */
 }
+
+/* Backgrounds for fasiliti cards */
+.surau { background: url("ruangansurau1.jpg") center/cover no-repeat; }
+.pelajar { background: url("ruanganpelajar1.jpg") center/cover no-repeat; }
+.cafe { background: url("cafeteria1.jpg") center/cover no-repeat; }
+.pengangkutan { background: url("pengangkutan1.jpg") center/cover no-repeat; }
+.kelas { background: url("kelas1.jpg") center/cover no-repeat; }
+.dewan { background: url("dewan.jpg") center/cover no-repeat; }
+.atm { background: url("atm.png") center/cover no-repeat; }
+.pos { background: url("pos.png") center/cover no-repeat; }
+.parking { background: url("park.png") center/cover no-repeat; }
+.asrama { background: url("asrama1.png") center/cover no-repeat; }
