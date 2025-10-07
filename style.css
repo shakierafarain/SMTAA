@@ -543,3 +543,85 @@ nav {
 .pos { background: url("pos.png") center/cover no-repeat; }
 .parking { background: url("park.png") center/cover no-repeat; }
 .asrama { background: url("asrama1.png") center/cover no-repeat; }
+
+/* Contact Section */
+.contact-section {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #ffffff;
+}
+
+.contact-section h1 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.contact-section p {
+  font-size: 16px;
+  color: #444;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.contact-card {
+  background: #f0fdf4;
+  border: 1px solid #c8e6c9;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-card i {
+  font-size: 30px;
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.contact-card h3 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.contact-card a {
+  color: #2e7d32;
+  text-decoration: none;
+}
+
+/* Make all clickable links interactive */
+a {
+  text-decoration: none;
+  color: #2e7d32; /* your default green theme */
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #1b5e20; /* darker green on hover */
+  text-decoration: underline;
+  transform: scale(1.05); /* slightly enlarges the link */
+}
+
+/* For buttons that are links */
+button, .btn, a.button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover, .btn:hover, a.button:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
