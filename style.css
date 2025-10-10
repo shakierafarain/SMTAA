@@ -293,89 +293,87 @@ footer {
 
 /* ===== Testimoni Page ===== */
 
-/* Batch photo (main group photo) */
-.batch-photo {
-  text-align: center;
-  margin: 50px auto;
-}
-.batch-photo h2 {
-  font-size: 2rem;
-  color: #006400;
-  margin-bottom: 20px;
-}
-.batch-photo img.main-batch {
-  max-width: 90%;
-  border-radius: 20px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-  transition: transform 0.3s ease;
-}
-.batch-photo img.main-batch:hover {
-  transform: scale(1.02);
-}
-
-/* Pelajar Terbaik Section */
 .pelajar-terbaik {
   text-align: center;
-  margin: 60px auto;
+  padding: 60px 20px;
 }
+
 .pelajar-terbaik h2 {
-  font-size: 2rem;
-  color: #006400;
-  margin-bottom: 25px;
+  color: #2e7d32;
+  font-weight: 700;
+  margin-bottom: 30px;
 }
 
-/* Swiper container */
-.mySwiper {
-  width: 90%;
-  max-width: 1000px;
-  margin: 30px auto;
-  padding: 20px 0;
+.pelajar-terbaik h3 {
+  color: #1b5e20;
+  margin-bottom: 15px;
 }
 
-/* Each slide */
-.mySwiper .swiper-slide {
+.batch-group {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.student {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.mySwiper img {
-  width: 100%;
-  max-width: 280px;
-  border-radius: 20px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+.student img {
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   transition: transform 0.3s ease;
 }
-.mySwiper img:hover {
+
+.student img:hover {
   transform: scale(1.05);
 }
 
-.mySwiper p {
-  margin-top: 12px;
+.student p {
+  margin-top: 10px;
   font-weight: 600;
-  font-size: 1.1rem;
-  color: #006400;
 }
 
-/* Swiper navigation buttons */
-.swiper-button-next,
-.swiper-button-prev {
-  color: #006400;
-  transition: transform 0.2s ease;
-}
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  transform: scale(1.2);
+/* Lightbox (click to enlarge) */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* Swiper pagination dots */
-.swiper-pagination-bullet {
-  background: #006400;
-  opacity: 0.7;
+.lightbox-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 10px;
 }
-.swiper-pagination-bullet-active {
-  background: #00a000;
-  opacity: 1;
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: #f44336;
 }
 
 /* Responsive Layout */
