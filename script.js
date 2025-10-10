@@ -113,8 +113,7 @@ const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 
 hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('show'); // ✅ match CSS
-  hamburger.classList.toggle('open');
+  navLinks.classList.toggle('show');
 });
 
 function openModal(id) {

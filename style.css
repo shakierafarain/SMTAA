@@ -528,11 +528,6 @@ nav {
     padding: 20px 0;
   }
 
-  .nav-links li {
-    text-align: center;
-    margin: 10px 0;
-  }
-
   .nav-links.show {
     display: flex; /* show when toggled */
   }
