@@ -120,19 +120,18 @@ body {
 /* Footer */
 footer {
   background-color: #2e7d32;
-  color: white;
-  text-align: center;
-  padding: 20px 30px;
+  color: #fff;
   font-family: 'Poppins', sans-serif;
+  font-weight: 700;
   position: relative;
+  padding: 20px 30px;
+  text-align: center;
 }
 
-/* keep original text centered */
 .footer-content {
   text-align: center;
 }
 
-/* logos on the right */
 .footer-logos {
   position: absolute;
   right: 30px;
@@ -145,8 +144,29 @@ footer {
 .footer-logo {
   height: 40px;
   width: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
+.footer-logo.enlarged {
+  transform: scale(2);
+}
+
+/* --- Responsive Footer --- */
+@media (max-width: 768px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-logos {
+    position: static;
+    transform: none;
+    margin-top: 10px;
+    justify-content: center;
+  }
+}
 
 /* Responsive */
 @media (max-width: 768px) {
