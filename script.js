@@ -109,12 +109,13 @@ function highlightAndScroll(term) {
   }
 }
 
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("navLinks");
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
 
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('show'); // ✅ changed from 'active' to 'show'
-  hamburger.classList.toggle('open');
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("show"); // toggle .show (same as CSS)
+  });
 });
 
 
