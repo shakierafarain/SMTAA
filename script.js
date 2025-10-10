@@ -1,29 +1,35 @@
 // ===== Swiper Initialization for Pelajar Terbaik =====
-document.addEventListener("DOMContentLoaded", () => {
-  new Swiper(".mySwiper", {
-    slidesPerView: 3,
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
     spaceBetween: 30,
-    loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
+    loop: false, // disable looping if you want it to stop at the end
+    autoplay: false, // disable auto sliding
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
-    breakpoints: {
-      1024: {
-        slidesPerView: 3, // Desktop
-      },
-      768: {
-        slidesPerView: 2, // Tablet
-      },
-      480: {
-        slidesPerView: 1, // Mobile
-      },
-    },
   });
+
+// Click-to-enlarge (lightbox)
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".close");
+
+document.querySelectorAll(".enlargeable").forEach(img => {
+  img.addEventListener("click", () => {
+    lightbox.style.display = "block";
+    lightboxImg.src = img.src;
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  lightbox.style.display = "none";
+});
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    lightbox.style.display = "none";
+  }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
