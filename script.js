@@ -1,79 +1,86 @@
+console.log("script.js loaded successfully");
+
 // ===== Swiper Initialization for Pelajar Terbaik =====
-var swiper = new Swiper(".mySwiper", {
+if (typeof Swiper !== "undefined" && document.querySelector(".mySwiper")) {
+  var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
     spaceBetween: 30,
-    loop: false, // disable looping if you want it to stop at the end
-    autoplay: false, // disable auto sliding
+    loop: false,
+    autoplay: false,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
   });
+}
 
-// Click-to-enlarge (lightbox)
+// ===== Lightbox (click to enlarge) =====
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 const closeBtn = document.querySelector(".close");
 
-document.querySelectorAll(".enlargeable").forEach(img => {
-  img.addEventListener("click", () => {
-    lightbox.style.display = "block";
-    lightboxImg.src = img.src;
+// Only run if lightbox elements exist on the page
+if (lightbox && lightboxImg) {
+  document.querySelectorAll(".enlargeable").forEach(img => {
+    img.addEventListener("click", () => {
+      lightbox.style.display = "block";
+      lightboxImg.src = img.src;
+    });
   });
-});
 
-closeBtn.addEventListener("click", () => {
-  lightbox.style.display = "none";
-});
-
-lightbox.addEventListener("click", (e) => {
-  if (e.target === lightbox) {
-    lightbox.style.display = "none";
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
   }
-});
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = "none";
+    }
+  });
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   const searchForm = document.getElementById("searchForm");
   const searchInput = document.getElementById("searchInput");
 
-  if (!searchForm) return;
+  if (searchForm && searchInput) {
+    searchForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const keyword = searchInput.value.trim().toLowerCase();
+      if (!keyword) return;
 
-  searchForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const keyword = searchInput.value.trim().toLowerCase();
-    if (!keyword) return;
+      // Map keywords to pages
+      const routes = {
+        "pengenalan": "index.html",
+        "syarat": "index.html",
+        "spm": "pembelajaran.html",
+        "pembelajaran": "pembelajaran.html",
+        "kelebihan": "pembelajaran.html",
+        "pengajian": "pembelajaran.html",
+        "fasiliti": "fasiliti.html",
+        "surau": "fasiliti.html",
+        "pelajar": "fasiliti.html",
+        "testimoni": "testimoni.html",
+        "batch": "testimoni.html",
+        "kelas": "fasiliti.html",
+        "pengangkutan": "fasiliti.html",
+        "bas": "fasiliti.html",
+        "smart tahfiz": "fasiliti.html",
+      };
 
-    // Map keywords to pages
-    const routes = {
-      "pengenalan": "index.html",
-      "syarat": "index.html",
-      "spm": "pembelajaran.html",
-      "pembelajaran": "pembelajaran.html",
-      "kelebihan": "pembelajaran.html",
-      "pengajian": "pembelajaran.html",
-      "fasiliti": "fasiliti.html",
-      "surau": "fasiliti.html",
-      "pelajar": "fasiliti.html",
-      "testimoni": "testimoni.html",
-      "batch": "testimoni.html",
-      "kelas": "fasiliti.html",
-      "pengangkutan": "fasiliti.html",
-      "bas": "fasiliti.html",
-      "smart tahfiz": "fasiliti.html",
-    };
-
-    // Pick destination
-    let targetPage = "index.html"; // default
-    for (const key in routes) {
-      if (keyword.includes(key)) {
-        targetPage = routes[key];
-        break;
+      let targetPage = "index.html"; // default
+      for (const key in routes) {
+        if (keyword.includes(key)) {
+          targetPage = routes[key];
+          break;
+        }
       }
-    }
 
-    // Redirect with keyword in query string
-    window.location.href = `${targetPage}?search=${encodeURIComponent(keyword)}`;
-  });
+      window.location.href = `${targetPage}?search=${encodeURIComponent(keyword)}`;
+    });
+  }
 
   // Highlight function on each page
   const params = new URLSearchParams(window.location.search);
@@ -110,11 +117,26 @@ function highlightAndScroll(term) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("script.js loaded successfully");
+
   const hamburger = document.getElementById("hamburger");
   const navLinks = document.getElementById("navLinks");
 
+  if (!hamburger) {
+    console.error("❌ Hamburger element not found in DOM!");
+    return;
+  }
+
+  if (!navLinks) {
+    console.error("❌ navLinks element not found in DOM!");
+    return;
+  }
+
+  console.log("✅ Hamburger and navLinks found!");
+
   hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("show"); // toggle .show (same as CSS)
+    console.log("🍔 Hamburger clicked!");
+    navLinks.classList.toggle("show");
   });
 });
 
