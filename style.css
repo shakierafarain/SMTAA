@@ -431,8 +431,10 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 15px 40px;
-  background: #006400; /* adjust if needed */
+  background: #006400;
   color: #fff;
+  position: relative;
+  z-index: 1000;
 }
 
 /* Logo + Text */
@@ -474,6 +476,13 @@ nav {
   color: #ffcc00; /* hover effect */
 }
 
+/* Hamburger (hidden on large screens) */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 /* Search bar in navbar */
 .search-bar {
   display: flex;
@@ -509,16 +518,14 @@ nav {
 }
 
 /* Hamburger button */
-.hamburger {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-/* Mobile Styles */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none; /* hide by default */
+  .hamburger {
+    display: block;
+    color: #fff;
+  }
+
+.nav-links {
+    display: none;
     flex-direction: column;
     width: 100%;
     background: #006400;
@@ -526,15 +533,17 @@ nav {
     top: 60px; /* below navbar */
     left: 0;
     padding: 20px 0;
+    text-align: center;
+    z-index: 9999;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   }
 
   .nav-links.show {
     display: flex; /* show when toggled */
   }
 
-  .hamburger {
-    display: block;
-    color: #fff;
+  .nav-links li {
+    padding: 10px 0;
   }
 
   /* Make search bar full width on mobile */
