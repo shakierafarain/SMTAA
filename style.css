@@ -26,7 +26,7 @@ body {
 }
 
 .tagline {
-  font-size: 1.2rem;
+  font-size: 2.0rem;
   margin-top: 10px;
   font-weight: 400;
 }
@@ -128,8 +128,11 @@ footer {
   text-align: center;
 }
 
-.footer-content {
-  text-align: center;
+.footer-content small {
+  font-size: 1.2rem; /* adjust to 1.2rem or 18px if you want it larger */
+  font-weight: 600;
+  display: block;
+  margin-top: 18px;
 }
 
 .footer-logos {
