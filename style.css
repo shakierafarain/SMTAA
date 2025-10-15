@@ -101,8 +101,11 @@ body {
       border-radius: 12px;
       max-width: 600px;
       width: 90%;
-      text-align: left;
+      text-align: justify;
       animation: pop 0.3s ease-in-out;
+      line-height: 1.8;
+      margin-top: 15px;
+      font-size: 1rem;
     }
 
     .close {
@@ -119,7 +122,7 @@ body {
 
 /* Footer */
 footer {
-  background-color: #2e7d32;
+  background-color: green;
   color: #fff;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
@@ -630,7 +633,7 @@ nav {
 }
 
 .contact-card a {
-  color: #2e7d32;
+  color: blue;
   text-decoration: none;
 }
 
@@ -643,7 +646,7 @@ a {
 }
 
 a:hover {
-  color: #1b5e20; /* darker green on hover */
+  color: blue; /* darker green on hover */
   text-decoration: underline;
   transform: scale(1.05); /* slightly enlarges the link */
 }
