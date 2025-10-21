@@ -3,7 +3,7 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url(watermark2.png); /* your image file name or URL */
+  background-image: url(watermark3.png); /* your image file name or URL */
   background-size: cover;       /* make it cover the whole page */
   background-repeat: no-repeat; /* don’t repeat the image */
   background-attachment: fixed; /* make it stay still while scrolling */
@@ -689,7 +689,7 @@ nav {
 .contact-section {
   text-align: center;
   padding: 60px 20px;
-  background-image: url(watermark2.png); /* your image file name or URL */
+  background-image: url(watermark3.png); /* your image file name or URL */
   background-size: cover;       /* make it cover the whole page */
   background-repeat: no-repeat; /* don’t repeat the image */
   background-attachment: fixed; /* make it stay still while scrolling */
