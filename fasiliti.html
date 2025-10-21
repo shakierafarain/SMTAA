@@ -50,7 +50,7 @@
   <section class="cards">
     <div class="card-box surau" onclick="openModal('surau')"><h2>Surau</h2></div>
     <div class="card-box pelajar" onclick="openModal('pelajar')"><h2>Ruangan Pelajar</h2></div>
-    <div class="card-box cafe" onclick="openModal('cafe')"><h2>Cafeteria</h2></div>
+    <div class="card-box cafe" onclick="openModal('cafe')"><h2>Kafeteria</h2></div>
     <div class="card-box pengangkutan" onclick="openModal('pengangkutan')"><h2>Pengangkutan</h2></div>
     <div class="card-box kelas" onclick="openModal('kelas')"><h2>Kelas</h2></div>
     <div class="card-box dewan" onclick="openModal('dewan')"><h2>Dewan</h2></div>
@@ -58,6 +58,8 @@
     <div class="card-box pos" onclick="openModal('pos')"><h2>Pos Pengawal</h2></div>
     <div class="card-box parking" onclick="openModal('parking')"><h2>Parking</h2></div>
     <div class="card-box asrama" onclick="openModal('asrama')"><h2>Asrama</h2></div>
+    <div class="card-box aktiviti" onclick="openModal('aktiviti')"><h2>Aktiviti</h2></div>
+    <div class="card-box bangunan" onclick="openModal('bangunan')"><h2>Bangunan</h2></div>
   </section>
 
   <!-- Modal Popups -->
@@ -88,7 +90,7 @@
   <div id="cafe" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('cafe')">&times;</span>
-      <h2>Cafeteria</h2>
+      <h2>Kafeteria</h2>
       <div class="gallery">
         <img src="cafeteria1.jpg" alt="Cafeteria 1">
         <img src="cafeteria2.jpg" alt="Cafeteria 2">
@@ -174,20 +176,56 @@
     </div>
   </div>
 
+    <div id="aktiviti" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('aktiviti')">&times;</span>
+      <h2>Aktiviti</h2>
+      <div class="gallery">
+        <img src="ak1.png" alt="Aktiviti 1">
+        <img src="ak2.png" alt="Aktiviti 2">
+        <img src="ak3.png" alt="Aktiviti 3">
+        <img src="ak3.png" alt="Aktiviti 4">
+      </div>
+    </div>
+  </div>
+
+  <div id="bangunan" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('bangunan')">&times;</span>
+      <h2>Bangunan</h2>
+      <div class="gallery">
+        <img src="bangunan1.png" alt="Bangunan 1">
+        <img src="bangunan2.png" alt="Bangunan 2">
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
-  <footer>
+<footer>
   <div class="footer-content">
     <p>SMART TAHFIZ FAST TRACK SPM | SEKOLAH MENENGAH TAHFIZ AL ATTAS</p>
     <small>© 2026 أخلاق • علمو • عمل</small>
   </div>
 
-  <div class="footer-logos">
-    <img src="unifieldrbg.png" alt="Logo 1" class="footer-logo">
-    <img src="ypbrbg.png" alt="Logo 2" class="footer-logo">
-    <img src="ses.png" alt="Logo 3" class="footer-logo">
+  <div class="footer-collab">
+    <div class="footer-arrow"></div>
+    <div class="footer-right-content">
+      <div class="footer-organizer">
+        <p>Anjuran</p>
+        <img src="logo smtaa rbg.png" alt="SMTAA Logo" class="footer-logo">
+      </div>
+      <div class="footer-partners">
+        <p>Kerjasama</p>
+        <div class="partner-logos">
+          <img src="ypbrbg.png" alt="YP Logo" class="footer-logo">
+          <img src="unifieldrbg.png" alt="UIC Logo" class="footer-logo">
+          <img src="ses.png" alt="SES Logo" class="footer-logo">
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

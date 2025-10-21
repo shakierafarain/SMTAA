@@ -1,19 +1,5 @@
 console.log("script.js loaded successfully");
 
-// ===== Swiper Initialization for Pelajar Terbaik =====
-if (typeof Swiper !== "undefined" && document.querySelector(".mySwiper")) {
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: false,
-    autoplay: false,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
-}
-
 // ===== Lightbox (click to enlarge) =====
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");

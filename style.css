@@ -3,7 +3,11 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f9fdf9;
+  background-image: url(watermark2.png); /* your image file name or URL */
+  background-size: cover;       /* make it cover the whole page */
+  background-repeat: no-repeat; /* don’t repeat the image */
+  background-attachment: fixed; /* make it stay still while scrolling */
+  background-position: center;  /* center the image */
   color: #2e7d32;
   line-height: 1.6;
 }
@@ -127,50 +131,128 @@ footer {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   position: relative;
-  padding: 20px 30px;
+  padding: 35px 30px;
+  display: flex;
+  justify-content: center; /* center main text */
+  align-items: center;
   text-align: center;
+  overflow: hidden;
+  min-height: 120px;
+}
+
+/* Center content */
+.footer-content {
+  text-align: center;
+  z-index: 1;
 }
 
 .footer-content small {
-  font-size: 1.2rem; /* adjust to 1.2rem or 18px if you want it larger */
+  font-size: 1.1rem;
   font-weight: 600;
   display: block;
-  margin-top: 18px;
+  margin-top: 10px;
 }
 
-.footer-logos {
-  position: absolute;
-  right: 30px;
-  top: 50%;
-  transform: translateY(-50%);
+/* Collaboration Section */
+.footer-collab {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+
+/* White arrow shape pointing inward */
+.footer-arrow {
+  width: 40px;
+  height: 100%;
+  background-color: #fff;
+  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+  position: relative;
+  z-index: 2;
+}
+
+/* White background area for logos */
+.footer-right-content {
+  background-color: #fff;
+  color: #317873;
+  padding: 15px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.footer-organizer,
+.footer-partners {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.footer-organizer p,
+.footer-partners p {
+  margin: 5px 0;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .footer-logo {
   height: 40px;
   width: auto;
-  cursor: pointer;
+  margin: 5px;
   transition: transform 0.3s ease;
 }
 
-.footer-logo.enlarged {
-  transform: scale(2);
+.footer-logo:hover {
+  transform: scale(1.1);
 }
 
-/* --- Responsive Footer --- */
+.partner-logos {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive Footer */
 @media (max-width: 768px) {
   footer {
-    display: flex;
     flex-direction: column;
-    align-items: center;
+    text-align: center;
+    padding: 20px;
   }
 
-  .footer-logos {
+  .footer-collab {
     position: static;
-    transform: none;
-    margin-top: 10px;
-    justify-content: center;
+    flex-direction: column;
+    margin-top: 15px;
+    width: auto;
+    height: auto;
+  }
+
+  .footer-arrow {
+    display: none;
+  }
+
+  .footer-right-content {
+    width: auto;
+    height: auto; /* remove fixed height */
+    padding: 10px 15px; /* smaller padding for mobile */
+    background-color: #fff;
+    border-radius: 8px;
+    display: inline-flex; /* shrink to fit content */
+  }
+
+  .footer-organizer,
+  .footer-partners {
+    margin-bottom: 8px;
+  }
+
+  .footer-logo {
+    height: 35px;
   }
 }
 
@@ -317,52 +399,71 @@ footer {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 }
 
-/* ===== Testimoni Page ===== */
-
+/* Pelajar Terbaik Section */
 .pelajar-terbaik {
-  text-align: center;
   padding: 60px 20px;
+  text-align: center;
 }
 
 .pelajar-terbaik h2 {
-  color: #2e7d32;
+  font-size: 2em;
   font-weight: 700;
   margin-bottom: 30px;
+  color: #333;
 }
 
-.pelajar-terbaik h3 {
-  color: #1b5e20;
-  margin-bottom: 15px;
+.batch-section {
+  margin-bottom: 50px;
 }
 
-.batch-group {
+.batch-section h3 {
+  font-size: 1.5em;
+  color: #444;
+  margin-bottom: 20px;
+  border-bottom: 2px solid teal;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.batch-grid {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 30px;
   flex-wrap: wrap;
 }
 
 .student {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  width: 220px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.student:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
 }
 
 .student img {
-  width: 180px;
-  height: auto;
+  width: 100%;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-}
-
-.student img:hover {
-  transform: scale(1.05);
+  margin-bottom: 10px;
 }
 
 .student p {
-  margin-top: 10px;
+  font-size: 1em;
   font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .student {
+    width: 80%;
+  }
 }
 
 /* Lightbox (click to enlarge) */
@@ -580,12 +681,19 @@ nav {
 .pos { background: url("pos.png") center/cover no-repeat; }
 .parking { background: url("park.png") center/cover no-repeat; }
 .asrama { background: url("asrama1.png") center/cover no-repeat; }
+.aktiviti { background: url("ak1.png") center/cover no-repeat; }
+.bangunan { background: url("bangunan1.png") center/cover no-repeat; }
+
 
 /* Contact Section */
 .contact-section {
   text-align: center;
   padding: 60px 20px;
-  background-color: #ffffff;
+  background-image: url(watermark2.png); /* your image file name or URL */
+  background-size: cover;       /* make it cover the whole page */
+  background-repeat: no-repeat; /* don’t repeat the image */
+  background-attachment: fixed; /* make it stay still while scrolling */
+  background-position: center;  /* center the image */
 }
 
 .contact-section h1 {
