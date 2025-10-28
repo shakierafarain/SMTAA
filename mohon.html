@@ -7,6 +7,20 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    .google-form-embed {
+      background: #c1d2cb;
+      padding: 20px 0;
+      border-radius: 10px;
+    }
+    .google-form-embed iframe {
+      background: #c1d2cb;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
 </head>
 <body>
 
@@ -54,6 +68,13 @@
     
     <div class="application-intro">
       <h2>BORANG PERMOHONAN KEMASUKAN</h2>
+      <div class="google-form-embed">
+  <!-- Google Form Embed -->
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdJ3VsylV9JaxUaZn6prKQaIAlY-swpvyCOVvS9BbS53NgT1A/viewform?embedded=true" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">Memuatkan…</iframe>
+      </div>
+    </div>
+
+    
       <p>Sila isi maklumat yang diperlukan dengan lengkap dan tepat. Pastikan semua dokumen yang diperlukan turut disertakan.</p>
     </div>
 
@@ -354,6 +375,9 @@
   </div>
 </footer>
 
+<script src="script.js"></script>
+</body>
+</html>
 <!-- Firebase SDK -->
 <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
