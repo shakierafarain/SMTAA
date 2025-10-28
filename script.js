@@ -158,3 +158,45 @@ function openModal(id) {
         }
       });
     }
+
+// === Popup logic ===
+window.addEventListener('load', () => {
+  const popup = document.getElementById('userPopup');
+  const closeBtn = document.getElementById('closePopup');
+  const form = document.getElementById('popupForm');
+  
+  // Show popup only once per session
+  if (!sessionStorage.getItem('popupShown')) {
+    popup.style.display = 'flex';
+  }
+
+  closeBtn.addEventListener('click', () => {
+    popup.style.display = 'none';
+    sessionStorage.setItem('popupShown', 'true');
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+
+    // Replace with your Google Apps Script URL
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwz7XG3NEy32RV1JGUlHrHZKrUjcf06sYxZSzEivrdzurcxTAXbh5pIrh2SjzQBJTA/exec";
+    
+    try {
+      await fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, phone })
+      });
+
+      alert("Terima kasih! Anda boleh terus melayari laman SMTAA.");
+      popup.style.display = 'none';
+      sessionStorage.setItem('popupShown', 'true');
+    } catch (error) {
+      console.error("Error!", error.message);
+    }
+  });
+});
