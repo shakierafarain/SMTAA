@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohon - SMTAA</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <a href="index.html">
+        <img src="logo smtaa rbg.png" alt="SMTAA Logo">
+        <span>Sekolah Menengah Tahfiz Al Attas</span>
+      </a>
+    </div>
+
+    <!-- Hamburger Menu Button -->
+<div class="hamburger" id="hamburger" role="button" aria-label="Toggle navigation" aria-expanded="false" tabindex="0">
+  <i class="fas fa-bars" aria-hidden="true"></i>
+</div>
+
+    <ul class="nav-links" id="navLinks">
+  <li><a href="index.html">Utama</a></li>
+  <li><a href="fasiliti.html">Fasiliti</a></li>
+  <li><a href="pembelajaran.html">Pembelajaran</a></li>
+  <li><a href="testimoni.html">Testimoni</a></li>
+  <li><a href="hubungi.html">Hubungi</a></li>
+  <li><a href="mohon.html" class="active">Mohon</a></li>
+  <li>
+    <form id="searchForm" class="search-bar">
+      <input type="text" id="searchInput" placeholder="Cari...">
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+  </li>
+</ul>
+
+  </nav>
+
+<!-- Application Section -->
+  <header class="hero small-hero">
+    <div class="hero-content">
+      <h1>PERMOHONAN KEMASUKAN</h1>
+      <p>Mohon kemasukan ke Program Smart Tahfiz Fast Track SPM</p>
+    </div>
+  </header>
+
+  <!-- Application Form Section -->
+<section class="application-section">  <div class="application-container">
+    
+    <div class="application-intro">
+      <h2>BORANG PERMOHONAN KEMASUKAN</h2>
+      <p>Sila isi maklumat yang diperlukan dengan lengkap dan tepat. Pastikan semua dokumen yang diperlukan turut disertakan.</p>
+    </div>
+
+    <!-- Application Form -->
+    <form class="application-form" id="applicationForm">
+      
+      <!-- Personal Information -->
+      <div class="form-section">
+        <h3><i class="fas fa-user"></i> Maklumat Peribadi</h3>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullName">Nama Penuh <span class="required">*</span></label>
+            <input type="text" id="fullName" name="fullName" required>
+          </div>
+          <div class="form-group">
+            <label for="icNo">No. Kad Pengenalan <span class="required">*</span></label>
+            <input type="text" id="icNo" name="icNo" placeholder="XXXXXX-XX-XXXX" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="birthDate">Tarikh Lahir <span class="required">*</span></label>
+            <input type="date" id="birthDate" name="birthDate" required>
+          </div>
+          <div class="form-group">
+            <label for="gender">Jantina <span class="required">*</span></label>
+            <select id="gender" name="gender" required>
+              <option value="">Pilih Jantina</option>
+              <option value="lelaki">Lelaki</option>
+              <option value="perempuan">Perempuan</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">No. Telefon <span class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="01X-XXXXXXX" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Alamat E-mel</label>
+            <input type="email" id="email" name="email" placeholder="nama@example.com">
+          </div>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="address">Alamat Rumah <span class="required">*</span></label>
+          <textarea id="address" name="address" rows="3" placeholder="Masukkan alamat lengkap" required></textarea>
+        </div>
+      </div>
+
+      <!-- Parent/Guardian Information -->
+      <div class="form-section">
+        <h3><i class="fas fa-users"></i> Maklumat Ibu Bapa / Penjaga</h3>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="parentName">Nama Ibu Bapa / Penjaga <span class="required">*</span></label>
+            <input type="text" id="parentName" name="parentName" required>
+          </div>
+          <div class="form-group">
+            <label for="parentPhone">No. Telefon <span class="required">*</span></label>
+            <input type="tel" id="parentPhone" name="parentPhone" placeholder="01X-XXXXXXX" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="occupation">Pekerjaan</label>
+            <input type="text" id="occupation" name="occupation">
+          </div>
+          <div class="form-group">
+            <label for="income">Pendapatan Bulanan (RM)</label>
+            <input type="number" id="income" name="income" placeholder="0">
+          </div>
+        </div>
+      </div>
+
+      <!-- Educational Background -->
+      <div class="form-section">
+        <h3><i class="fas fa-graduation-cap"></i> Latar Belakang Pendidikan</h3>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="lastSchool">Sekolah / Madrasah Terakhir <span class="required">*</span></label>
+            <input type="text" id="lastSchool" name="lastSchool" required>
+          </div>
+          <div class="form-group">
+            <label for="graduationYear">Tahun Tamat <span class="required">*</span></label>
+            <input type="number" id="graduationYear" name="graduationYear" min="2015" max="2026" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="schoolType">Jenis Sekolah <span class="required">*</span></label>
+            <select id="schoolType" name="schoolType" required>
+              <option value="">Pilih Jenis Sekolah</option>
+              <option value="tahfiz">Sekolah Tahfiz</option>
+              <option value="madrasah">Madrasah</option>
+              <option value="pondok">Pondok</option>
+              <option value="alim">Sekolah Alim</option>
+              <option value="lain">Lain-lain</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="hafazanLevel">Tahap Hafazan <span class="required">*</span></label>
+            <select id="hafazanLevel" name="hafazanLevel" required>
+              <option value="">Pilih Tahap Hafazan</option>
+              <option value="30juzuk">30 Juzuk (Lengkap)</option>
+              <option value="25-29juzuk">25-29 Juzuk</option>
+              <option value="20-24juzuk">20-24 Juzuk</option>
+              <option value="15-19juzuk">15-19 Juzuk</option>
+              <option value="10-14juzuk">10-14 Juzuk</option>
+              <option value="5-9juzuk">5-9 Juzuk</option>
+              <option value="kurang5juzuk">Kurang dari 5 Juzuk</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>
+            <input type="checkbox" name="hasCertificate" id="hasCertificate">
+            Saya memiliki sijil syahadah/khatam hafazan
+          </label>
+        </div>
+      </div>
+
+      <!-- Academic Skills -->
+      <div class="form-section">
+        <h3><i class="fas fa-book"></i> Kemahiran Akademik</h3>
+        <p class="form-note">Sila nyatakan tahap kemahiran anda dalam 5M (skala 1-5, di mana 5 adalah sangat baik)</p>
+        
+        <div class="skills-grid">
+          <div class="skill-item">
+            <label for="membaca">Membaca</label>
+            <select id="membaca" name="membaca" required>
+              <option value="">Pilih</option>
+              <option value="1">1 - Lemah</option>
+              <option value="2">2 - Sederhana</option>
+              <option value="3">3 - Baik</option>
+              <option value="4">4 - Sangat Baik</option>
+              <option value="5">5 - Cemerlang</option>
+            </select>
+          </div>
+          
+          <div class="skill-item">
+            <label for="menulis">Menulis (termasuk Jawi)</label>
+            <select id="menulis" name="menulis" required>
+              <option value="">Pilih</option>
+              <option value="1">1 - Lemah</option>
+              <option value="2">2 - Sederhana</option>
+              <option value="3">3 - Baik</option>
+              <option value="4">4 - Sangat Baik</option>
+              <option value="5">5 - Cemerlang</option>
+            </select>
+          </div>
+          
+          <div class="skill-item">
+            <label for="mengira">Mengira</label>
+            <select id="mengira" name="mengira" required>
+              <option value="">Pilih</option>
+              <option value="1">1 - Lemah</option>
+              <option value="2">2 - Sederhana</option>
+              <option value="3">3 - Baik</option>
+              <option value="4">4 - Sangat Baik</option>
+              <option value="5">5 - Cemerlang</option>
+            </select>
+          </div>
+          
+          <div class="skill-item">
+            <label for="menghafal">Menghafal</label>
+            <select id="menghafal" name="menghafal" required>
+              <option value="">Pilih</option>
+              <option value="1">1 - Lemah</option>
+              <option value="2">2 - Sederhana</option>
+              <option value="3">3 - Baik</option>
+              <option value="4">4 - Sangat Baik</option>
+              <option value="5">5 - Cemerlang</option>
+            </select>
+          </div>
+          
+          <div class="skill-item">
+            <label for="memikir">Memikir</label>
+            <select id="memikir" name="memikir" required>
+              <option value="">Pilih</option>
+              <option value="1">1 - Lemah</option>
+              <option value="2">2 - Sederhana</option>
+              <option value="3">3 - Baik</option>
+              <option value="4">4 - Sangat Baik</option>
+              <option value="5">5 - Cemerlang</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Health and Discipline -->
+      <div class="form-section">
+        <h3><i class="fas fa-heart"></i> Kesihatan & Disiplin</h3>
+        
+        <div class="form-group">
+          <label>
+            <input type="checkbox" name="goodHealth" id="goodHealth" required>
+            <span class="required">*</span> Saya dalam keadaan sihat dan tidak mempunyai sebarang masalah kesihatan yang serius
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label>
+            <input type="checkbox" name="noDisciplinaryRecord" id="noDisciplinaryRecord" required>
+            <span class="required">*</span> Saya tidak mempunyai rekod masalah disiplin di sekolah sebelum ini
+          </label>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="healthIssues">Jika ada masalah kesihatan khusus, sila nyatakan:</label>
+          <textarea id="healthIssues" name="healthIssues" rows="2" placeholder="Nyatakan jika ada (jika tiada, tulis 'Tiada')"></textarea>
+        </div>
+      </div>
+
+      <!-- Documents Required -->
+      <div class="form-section">
+        <h3><i class="fas fa-file-alt"></i> Dokumen Diperlukan</h3>
+        <div class="documents-checklist">
+          <p><strong>Sila pastikan dokumen berikut disertakan bersama permohonan:</strong></p>
+          <ul>
+            <li><input type="checkbox" name="doc1"> Salinan Kad Pengenalan</li>
+            <li><input type="checkbox" name="doc2"> Salinan Sijil Lahir</li>
+            <li><input type="checkbox" name="doc3"> Sijil Syahadah/Khatam Hafazan (jika ada)</li>
+            <li><input type="checkbox" name="doc4"> Salinan Kad Pengenalan Ibu Bapa/Penjaga</li>
+            <li><input type="checkbox" name="doc5"> Slip Gaji/Penyata Pendapatan Ibu Bapa (3 bulan terkini)</li>
+            <li><input type="checkbox" name="doc6"> Gambar Passport (2 keping)</li>
+            <li><input type="checkbox" n  ame="doc7"> Sijil Kesihatan dari Klinik/Hospital</li>
+          </ul>
+        </div>
+      </div>a
+
+      <!-- Declaration -->
+      <div class="form-section">
+        <h3><i class="fas fa-signature"></i> Pengakuan</h3>
+        
+        <div class="declaration-text">
+          <p>Saya dengan ini mengesahkan bahawa semua maklumat yang diberikan adalah benar dan tepat. Saya memahami bahawa sebarang maklumat palsu boleh mengakibatkan permohonan saya dibatalkan.</p>
+          
+          <p>Saya juga bersetuju untuk mematuhi semua peraturan dan syarat yang ditetapkan oleh Sekolah Menengah Tahfiz Al-Attas sepanjang tempoh pengajian.</p>
+        </div>
+
+        <div class="form-group">
+          <label>
+            <input type="checkbox" name="declaration" id="declaration" required>
+            <span class="required">*</span> Saya bersetuju dengan pengakuan di atas
+          </label>
+        </div>
+
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-submit">
+        <button type="submit" class="submit-btn">
+          <i class="fas fa-paper-plane"></i>
+          Hantar Permohonan
+        </button>
+        <p class="submit-note">
+          Selepas menghantar borang ini, sila hantar semua dokumen yang diperlukan ke alamat sekolah atau ke nombor WhatsApp yang disediakan.
+        </p>
+      </div>
+
+    </form>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <p>SMART TAHFIZ FAST TRACK SPM | SEKOLAH MENENGAH TAHFIZ AL ATTAS</p>
+    <small>© 2026 أخلاق • علمو • عمل</small>
+  </div>
+
+  <div class="footer-collab">
+    <div class="footer-arrow"></div>
+    <div class="footer-right-content">
+      <div class="footer-organizer">
+        <p>Anjuran</p>
+        <img src="logo smtaa rbg.png" alt="SMTAA Logo" class="footer-logo">
+      </div>
+      <div class="footer-partners">
+        <p>Kerjasama</p>
+        <div class="partner-logos">
+          <img src="ypbrbg.png" alt="YP Logo" class="footer-logo">
+          <img src="unifieldrbg.png" alt="UIC Logo" class="footer-logo">
+          <img src="ses.png" alt="SES Logo" class="footer-logo">
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+
+<!-- Firebase Configuration -->
+<script src="firebase-config.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
