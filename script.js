@@ -184,19 +184,38 @@ window.addEventListener('load', () => {
     // Replace with your Google Apps Script URL
     const scriptURL = "https://script.google.com/macros/s/AKfycbwz7XG3NEy32RV1JGUlHrHZKrUjcf06sYxZSzEivrdzurcxTAXbh5pIrh2SjzQBJTA/exec";
     
+    // ✅ Validation for phone number
+    const phonePattern = /^01\d{8,9}$/;
+    if (!phonePattern.test(phone)) {
+      alert("Sila masukkan nombor telefon yang sah (bermula dengan 01 dan 10-11 digit).");
+      return;
+    }
+
+    // Show success message right away (before waiting for fetch)
+    alert("Terima kasih! Anda boleh terus melayari laman SMTAA.");
+    popup.style.display = "none";
+    sessionStorage.setItem("popupShown", "true");
+
+    // Send data asynchronously
     try {
       await fetch(scriptURL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone })
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone }),
       });
-
-      alert("Terima kasih! Anda boleh terus melayari laman SMTAA.");
-      popup.style.display = 'none';
-      sessionStorage.setItem('popupShown', 'true');
     } catch (error) {
       console.error("Error!", error.message);
     }
   });
 });
+
+document.querySelectorAll('.popup-img').forEach(img => {
+  img.addEventListener('click', () => {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = img.src;
+    lightbox.style.display = 'block';
+  });
+});
+
