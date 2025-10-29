@@ -3,7 +3,7 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url(watermark3.png); /* your image file name or URL */
+  background-image: url(BG1.png); /* your image file name or URL */
   background-size: cover;       /* make it cover the whole page */
   background-repeat: no-repeat; /* don’t repeat the image */
   background-attachment: fixed; /* make it stay still while scrolling */
@@ -86,6 +86,7 @@ body {
     .pengenalan { background: url("pengenalann.jpg") center/cover no-repeat; }
     .syarat { background: url("sk.jpg") center/cover no-repeat; }
     .kelebihan { background: url("kstspm.jpg") center/cover no-repeat; }
+    .laluan { background: url("laluan.png") center/cover no-repeat; }
 
     /* Popup (modal) */
     .modal {
@@ -409,7 +410,7 @@ footer {
   font-size: 2em;
   font-weight: 700;
   margin-bottom: 30px;
-  color: #333;
+  color: white;
 }
 
 .batch-section {
@@ -418,7 +419,7 @@ footer {
 
 .batch-section h3 {
   font-size: 1.5em;
-  color: #444;
+  color: white;
   margin-bottom: 20px;
   border-bottom: 2px solid teal;
   display: inline-block;
@@ -689,7 +690,7 @@ nav {
 .contact-section {
   text-align: center;
   padding: 60px 20px;
-  background-image: url(watermark3.png); /* your image file name or URL */
+  background-image: url(BG1.png); /* your image file name or URL */
   background-size: cover;       /* make it cover the whole page */
   background-repeat: no-repeat; /* don’t repeat the image */
   background-attachment: fixed; /* make it stay still while scrolling */
