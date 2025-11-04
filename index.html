@@ -194,9 +194,17 @@
     <p style="color:#3b855d;">Dapatkan info dan pengumuman terkini dengan mengisi maklumat anda di ruangan di bawah</p>
 
     <form id="popupForm">
-      <input type="text" id="emel" name="emel" placeholder="Emel" required style="width:100%; padding:10px; margin:10px 0; border-radius:8px; border:1px solid #ddd;">
-      <input type="tel" id="phone" name="phone" placeholder="No. Telefon" required style="width:100%; padding:10px; margin-bottom:12px; border-radius:8px; border:1px solid #ddd;">
-      <button type="submit" style="width:100%; padding:10px; background:#2d5c4a; color:#fff; border:none; border-radius:8px; font-weight:700;">Hantar</button>
+      <div class="field-item" id="emelField" style="margin-bottom:9px;">
+  <input type="text" id="emel" name="emel" placeholder="Emel" required style="padding:10px; border-radius:8px; border:1px solid #ddd;">
+        <div id="emelError" class="input-error" aria-live="polite"></div>
+      </div>
+
+      <div class="field-item" id="phoneField" style="margin-bottom:9px;">
+  <input type="tel" id="phone" name="phone" placeholder="No. Telefon" required style="padding:10px; border-radius:8px; border:1px solid #ddd;">
+        <div id="phoneError" class="input-error" aria-live="polite"></div>
+      </div>
+
+      <button type="submit" class="popup-submit" style="font-weight:700;">Hantar</button>
     </form>
   </div>
 </div>

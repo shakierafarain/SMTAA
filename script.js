@@ -133,6 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!navLinks) {
     console.error("❌ navLinks element not found in DOM!");
     return;
+  // ```javascript
   }
 
   console.log("✅ Hamburger and navLinks found!");
@@ -179,41 +180,67 @@ window.addEventListener('load', () => {
     sessionStorage.setItem('popupShown', 'true');
   });
 
-  // Form submission
+  // Form submission — show inline errors under each field (no alerts)
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
-    const name = document.getElementById('emel').value;
-    const phone = document.getElementById('phone').value;
 
-    const scriptURL = "https://script.google.com/macros/s/AKfycbwz7XG3NEy32RV1JGUlHrHZKrUjcf06sYxZSzEivrdzurcxTAXbh5pIrh2SjzQBJTA/exec";
-    
-    // ✅ Phone validation
+    const emelEl = document.getElementById('emel');
+    const phoneEl = document.getElementById('phone');
+    const emelError = document.getElementById('emelError');
+    const phoneError = document.getElementById('phoneError');
+    const emelField = document.getElementById('emelField');
+    const phoneField = document.getElementById('phoneField');
+
+    // clear previous errors
+    emelError.textContent = '';
+    phoneError.textContent = '';
+    emelEl.classList.remove('input-invalid');
+    phoneEl.classList.remove('input-invalid');
+    emelField.classList.remove('has-error');
+    phoneField.classList.remove('has-error');
+
+    const emel = emelEl.value.trim();
+    const phone = phoneEl.value.trim();
+
+    let hasError = false;
+
+    // Email validation: must contain @
+    if (!emel || emel.indexOf('@') === -1) {
+      emelError.textContent = 'Sila masukkan alamat emel yang sah.';
+      emelEl.classList.add('input-invalid');
+      emelField.classList.add('has-error');
+      hasError = true;
+    }
+
+    // Phone validation: must start with 01 and be 10-11 digits
     const phonePattern = /^01\d{8,9}$/;
     if (!phonePattern.test(phone)) {
-      alert("Sila masukkan nombor telefon yang sah (bermula dengan 01 dan 10-11 digit).");
+      phoneError.textContent = 'Sila masukkan nombor telefon yang sah.';
+      phoneEl.classList.add('input-invalid');
+      phoneField.classList.add('has-error');
+      hasError = true;
+    }
+
+    if (hasError) {
+      // keep popup open and let user correct
       return;
     }
 
-    // Close registration popup
-    popup.style.display = "none";
+    // No errors -> proceed with previous flow
+    popup.style.display = 'none';
+    welcomePopup.style.display = 'flex';
+    sessionStorage.setItem('popupShown', 'true');
 
-    // ✅ Show welcome popup instead of alert
-    welcomePopup.style.display = "flex";
-
-    // Mark popup as shown (so it won’t appear again)
-    sessionStorage.setItem("popupShown", "true");
-
-    // Send data asynchronously (non-blocking)
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwz7XG3NEy32RV1JGUlHrHZKrUjcf06sYxZSzEivrdzurcxTAXbh5pIrh2SjzQBJTA/exec";
     try {
       await fetch(scriptURL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, phone }),
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: emel, phone }),
       });
     } catch (error) {
-      console.error("Error!", error.message);
+      console.error('Error!', error && error.message ? error.message : error);
     }
   });
 
@@ -224,6 +251,34 @@ window.addEventListener('load', () => {
 
   closeWelcome.addEventListener('click', closeWelcomePopup);
   welcomeOk.addEventListener('click', closeWelcomePopup);
+
+  // Clear errors as user types
+  try {
+    const _emel = document.getElementById('emel');
+    const _phone = document.getElementById('phone');
+    const _emelError = document.getElementById('emelError');
+    const _phoneError = document.getElementById('phoneError');
+    const _emelField = document.getElementById('emelField');
+    const _phoneField = document.getElementById('phoneField');
+
+    if (_emel) {
+      _emel.addEventListener('input', () => {
+        if (_emelError) _emelError.textContent = '';
+        _emel.classList.remove('input-invalid');
+        if (_emelField) _emelField.classList.remove('has-error');
+      });
+    }
+
+    if (_phone) {
+      _phone.addEventListener('input', () => {
+        if (_phoneError) _phoneError.textContent = '';
+        _phone.classList.remove('input-invalid');
+        if (_phoneField) _phoneField.classList.remove('has-error');
+      });
+    }
+  } catch (err) {
+    // non-critical
+  }
 });
 
 // === Lightbox logic ===

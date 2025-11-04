@@ -1208,14 +1208,52 @@ input[type="checkbox"] {
   margin-bottom: 10px;
 }
 
+/* Inline error / compact spacing for popup fields */
+.popup-content .field-item {
+  margin-bottom: 14px; /* slightly larger gap before error */
+  transition: margin-bottom 0.18s ease;
+  text-align: left;
+}
+
+.popup-content .field-item.has-error {
+  margin-bottom: 24px; /* more space when showing an error */
+}
+
+.popup-content .input-error {
+  color: #d32f2f;
+  font-size: 0.92rem;
+  line-height: 1.2;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 0;
+  transition: max-height 0.18s ease, opacity 0.18s ease, margin-top 0.18s ease;
+}
+
+.popup-content .field-item.has-error .input-error {
+  max-height: 60px; /* room for a couple lines */
+  opacity: 1;
+  margin-top: 6px;
+}
+
+.popup-content input.input-invalid {
+  border-color: #d32f2f !important;
+}
+
 .popup-content input {
-  width: 90%;
-  margin: 8px 0;
+  width: 95%;
+  margin: 0 auto;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
 }
 
+.popup-content .popup-submit {
+  width: 92%;
+  margin: 12px auto 0;
+  display: block;
+}
+ 
 .popup-content button {
   background: #2d5c4a;
   color: white;
