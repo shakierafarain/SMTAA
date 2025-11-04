@@ -12,6 +12,13 @@ body {
   line-height: 1.6;
 }
 
+@font-face {
+    font-family: 'tafakur';
+    src: url('../fonts/Tafakur.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Hero section */
 .hero {
   background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("bgg.png") center/cover no-repeat;
@@ -552,7 +559,7 @@ nav {
 }
 
 .logo img {
-  height: 40px;   /* adjust size */
+  height: 70px;   /* adjust size */
   margin-right: 10px;
   border-radius: 5px; /* optional if you want rounded logo */
 }

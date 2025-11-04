@@ -43,7 +43,7 @@
   <!-- Hero section -->
   <header class="hero">
     <div class="hero-content">
-      <h1>SEKOLAH MENENGAH TAHFIZ AL ATTAS</h1>
+      <h1 style="font-family: 'Tafakur', tafakur; font-size: 70px;">SEKOLAH MENENGAH TAHFIZ AL ATTAS</h1>
       <p class="tagline">أخلاق • علمو • عمل</p>
     </div>
   </header>
@@ -183,18 +183,34 @@
 </div>
 
 <!-- Popup Form -->
-<div id="userPopup" class="popup">
-  <div class="popup-content">
-    <span class="close" id="closePopup">&times;</span>
-    <h2>Selamat Datang ke Website SMTAA</h2>
-    <p>Sila isi nama dan nombor telefon anda.</p>
+<div id="userPopup" class="popup" style="display:none; position:fixed; inset:0; align-items:center; justify-content:center; background:rgba(0,0,0,0.35); z-index:9999;">
+  <div class="popup-content" style="position:relative; background:#fff; padding:28px; border-radius:12px; width:450px; max-width:94%; box-shadow:0 8px 36px rgba(0,0,0,0.18); text-align:center;">
+    
+    <!-- Close Button -->
+    <span id="closePopup" aria-label="Tutup" style="position:absolute; right:13px; top:5px; border:none; background:transparent; color:rgb(0, 0, 0); font-size:27px; cursor:pointer;">&times;</span>
+
+    <h2 style="color:#1f6b3a; margin-top:6px;">السلام عليکم</h2>
+    <p><b>Selamat datang ke SMTAA</b></p>
+    <p style="color:#3b855d;">Dapatkan info dan pengumuman terkini dengan mengisi maklumat anda di ruangan di bawah</p>
+
     <form id="popupForm">
-      <input type="text" id="name" name="name" placeholder="Nama" required>
-      <input type="tel" id="phone" name="phone" placeholder="No. Telefon" required>
-      <button type="submit">Hantar</button>
+      <input type="text" id="emel" name="emel" placeholder="Emel" required style="width:100%; padding:10px; margin:10px 0; border-radius:8px; border:1px solid #ddd;">
+      <input type="tel" id="phone" name="phone" placeholder="No. Telefon" required style="width:100%; padding:10px; margin-bottom:12px; border-radius:8px; border:1px solid #ddd;">
+      <button type="submit" style="width:100%; padding:10px; background:#2d5c4a; color:#fff; border:none; border-radius:8px; font-weight:700;">Hantar</button>
     </form>
   </div>
 </div>
+
+<!-- Welcome popup (after submit) -->
+<div id="welcomePopup" style="display:none; position:fixed; inset:0; align-items:center; justify-content:center; background:rgba(0,0,0,0.35); z-index:10000;">
+  <div style="position:relative; background:#fff; padding:26px; border-radius:12px; width:360px; max-width:92%; box-shadow:0 8px 36px rgba(0,0,0,0.18); text-align:center;">
+    <button id="closeWelcome" aria-label="Tutup" style="position:absolute; right:12px; top:8px; border:none; background:transparent; font-size:22px; cursor:pointer;">&times;</button>
+    <h3 style="color:#1f6b3a; margin-top:6px;">Terima Kasih!</h3>
+    <p>Selamat datang ke SMTAA. Terima kasih kerana mendaftar. Kami akan menghubungi anda tidak lama lagi.</p>
+    <button id="welcomeOk" style="margin-top:12px; padding:8px 16px; background:#2d5c4a; color:#fff; border:none; border-radius:8px; font-weight:600;">OK</button>
+  </div>
+</div>
+
 
 <!-- Lightbox for enlarging images -->
 <div id="lightbox" class="lightbox">

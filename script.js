@@ -164,39 +164,47 @@ window.addEventListener('load', () => {
   const popup = document.getElementById('userPopup');
   const closeBtn = document.getElementById('closePopup');
   const form = document.getElementById('popupForm');
-  
+  const welcomePopup = document.getElementById('welcomePopup');
+  const closeWelcome = document.getElementById('closeWelcome');
+  const welcomeOk = document.getElementById('welcomeOk');
+
   // Show popup only once per session
   if (!sessionStorage.getItem('popupShown')) {
     popup.style.display = 'flex';
   }
 
+  // Close registration popup manually
   closeBtn.addEventListener('click', () => {
     popup.style.display = 'none';
     sessionStorage.setItem('popupShown', 'true');
   });
 
+  // Form submission
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    const name = document.getElementById('name').value;
+    const name = document.getElementById('emel').value;
     const phone = document.getElementById('phone').value;
 
-    // Replace with your Google Apps Script URL
     const scriptURL = "https://script.google.com/macros/s/AKfycbwz7XG3NEy32RV1JGUlHrHZKrUjcf06sYxZSzEivrdzurcxTAXbh5pIrh2SjzQBJTA/exec";
     
-    // ✅ Validation for phone number
+    // ✅ Phone validation
     const phonePattern = /^01\d{8,9}$/;
     if (!phonePattern.test(phone)) {
       alert("Sila masukkan nombor telefon yang sah (bermula dengan 01 dan 10-11 digit).");
       return;
     }
 
-    // Show success message right away (before waiting for fetch)
-    alert("Terima kasih! Anda boleh terus melayari laman SMTAA.");
+    // Close registration popup
     popup.style.display = "none";
+
+    // ✅ Show welcome popup instead of alert
+    welcomePopup.style.display = "flex";
+
+    // Mark popup as shown (so it won’t appear again)
     sessionStorage.setItem("popupShown", "true");
 
-    // Send data asynchronously
+    // Send data asynchronously (non-blocking)
     try {
       await fetch(scriptURL, {
         method: "POST",
@@ -208,8 +216,17 @@ window.addEventListener('load', () => {
       console.error("Error!", error.message);
     }
   });
+
+  // Close welcome popup
+  const closeWelcomePopup = () => {
+    welcomePopup.style.display = "none";
+  };
+
+  closeWelcome.addEventListener('click', closeWelcomePopup);
+  welcomeOk.addEventListener('click', closeWelcomePopup);
 });
 
+// === Lightbox logic ===
 document.querySelectorAll('.popup-img').forEach(img => {
   img.addEventListener('click', () => {
     const lightbox = document.getElementById('lightbox');
@@ -218,4 +235,3 @@ document.querySelectorAll('.popup-img').forEach(img => {
     lightbox.style.display = 'block';
   });
 });
-
