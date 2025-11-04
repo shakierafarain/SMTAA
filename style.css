@@ -42,6 +42,23 @@ body {
   font-weight: 400;
 }
 
+ @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 45px; /* tablet size */
+      }
+    }
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 35px; /* mobile size */
+      }
+      .hero-content h2 {
+        font-size: 16px;
+      }
+      .hero-content .tagline {
+        font-size: 18px;
+      }
+    }
+
 /* Sections as cards side by side */
     .cards {
       display: flex;
@@ -560,7 +577,7 @@ nav {
 
 .logo img {
   height: 70px;   /* adjust size */
-  margin-right: 10px;
+  margin-right: 5px;
   border-radius: 5px; /* optional if you want rounded logo */
 }
 
