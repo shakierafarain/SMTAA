@@ -158,14 +158,13 @@ footer {
   position: relative;
   padding: 35px 30px;
   display: flex;
-  justify-content: center; /* center main text */
+  justify-content: center;
   align-items: center;
   text-align: center;
   overflow: hidden;
-  min-height: 120px;
+  min-height: 140px;
 }
 
-/* Center content */
 .footer-content {
   text-align: center;
   z-index: 1;
@@ -178,56 +177,26 @@ footer {
   margin-top: 10px;
 }
 
-/* Collaboration Section */
-.footer-collab {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
+/* White background behind logos */
+.footer-logos-box {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 10px 25px;
+  margin-top: 18px;
+  display: inline-block; /* centers the box */
 }
 
-/* White arrow shape pointing inward */
-.footer-arrow {
-  width: 40px;
-  height: 100%;
-  background-color: #fff;
-  clip-path: polygon(100% 0, 0 50%, 100% 100%);
-  position: relative;
-  z-index: 2;
-}
-
-/* White background area for logos */
-.footer-right-content {
-  background-color: #fff;
-  color: #317873;
-  padding: 15px 25px;
+.footer-logos {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  height: 100%;
-}
-
-.footer-organizer,
-.footer-partners {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.footer-organizer p,
-.footer-partners p {
-  margin: 5px 0;
-  font-size: 14px;
-  font-weight: 700;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .footer-logo {
-  height: 40px;
+  height: 45px;
   width: auto;
-  margin: 5px;
   transition: transform 0.3s ease;
 }
 
@@ -235,61 +204,30 @@ footer {
   transform: scale(1.1);
 }
 
-.partner-logos {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Responsive Footer */
-@media (max-width: 768px) {
-  footer {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-  }
-
-  .footer-collab {
-    position: static;
-    flex-direction: column;
-    margin-top: 15px;
-    width: auto;
-    height: auto;
-  }
-
-  .footer-arrow {
-    display: none;
-  }
-
-  .footer-right-content {
-    width: auto;
-    height: auto; /* remove fixed height */
-    padding: 10px 15px; /* smaller padding for mobile */
-    background-color: #fff;
-    border-radius: 8px;
-    display: inline-flex; /* shrink to fit content */
-  }
-
-  .footer-organizer,
-  .footer-partners {
-    margin-bottom: 8px;
-  }
-
-  .footer-logo {
-    height: 35px;
-  }
+/* Remove old collab section */
+.footer-collab,
+.footer-arrow,
+.footer-right-content {
+  display: none;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .card {
+  footer {
     flex-direction: column;
-    text-align: center;
+    padding: 25px 15px;
   }
 
-  .card.reverse {
-    flex-direction: column;
+  .footer-logo {
+    height: 40px;
+  }
+
+  .footer-logos-box {
+    padding: 8px 20px;
+  }
+
+  .footer-logos {
+    gap: 15px;
   }
 }
 
