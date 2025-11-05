@@ -559,11 +559,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-<<<<<<< HEAD
-  padding: 15px 15px 15px 15px; /* reduced left padding to move logo left */
-=======
   padding: 15px 15px 15px 15px;
->>>>>>> 8ce07a8f707e501700e2c8395fe41d5ca6a1aafd
   background: #317873;
   color: #fff;
   position: relative;
