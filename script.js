@@ -9,7 +9,7 @@ const closeBtn = document.querySelector(".close");
 if (lightbox && lightboxImg) {
   document.querySelectorAll(".enlargeable").forEach(img => {
     img.addEventListener("click", () => {
-      lightbox.style.display = "block";
+      lightbox.style.display = "flex"; // Changed from "block" to "flex"
       lightboxImg.src = img.src;
     });
   });
@@ -21,6 +21,7 @@ if (lightbox && lightboxImg) {
   }
 
   lightbox.addEventListener("click", (e) => {
+    // Close if clicking the background (but not the wrapper or image)
     if (e.target === lightbox) {
       lightbox.style.display = "none";
     }
@@ -432,6 +433,34 @@ document.addEventListener('DOMContentLoaded', () => {
         !supportIcon.contains(e.target)) {
       supportFormContainer.classList.remove('show');
     }
+  });
+});
+
+// === Dropdown arrow toggle (Hubungi → FAQs) ===
+document.addEventListener('DOMContentLoaded', () => {
+  const dropdowns = document.querySelectorAll('.dropdown');
+
+  dropdowns.forEach(dropdown => {
+    const arrow = dropdown.querySelector('.dropdown-arrow');
+    const link = dropdown.querySelector('a'); // "Hubungi"
+    const content = dropdown.querySelector('.dropdown-content');
+
+    if (arrow) {
+      arrow.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        content.classList.toggle('active');
+      });
+    }
+
+    // Ensure Hubungi link works normally on mobile
+    link.addEventListener('click', (e) => {
+      // Only apply this fix for small screens
+      if (window.innerWidth <= 768) {
+        // Let the browser navigate normally
+        window.location.href = link.getAttribute('href');
+      }
+    });
   });
 });
 

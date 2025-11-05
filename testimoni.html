@@ -39,11 +39,12 @@
   <li><a href="pembelajaran.html">Pembelajaran</a></li>
   <li><a href="testimoni.html" class="active">Testimoni</a></li>
   <li class="dropdown">
-    <a href="hubungi.html">Hubungi <i class="fas fa-chevron-down dropdown-arrow"></i></a>
-    <div class="dropdown-content">
-      <a href="faqs.html" class="passive">FAQs</a>
-    </div>
-  </li>
+  <a href="hubungi.html" class="passive">Hubungi</a>
+  <i class="fas fa-chevron-down dropdown-arrow"></i>
+  <div class="dropdown-content">
+    <a href="faqs.html">FAQs</a>
+  </div>
+</li>
   <li><a href="mohon.html">Mohon</a></li>
   <li>
     <form id="searchForm" class="search-bar">
@@ -127,10 +128,12 @@
   </div>
 </section>
 
-<!-- Lightbox Modal -->
+<!-- Lightbox for enlarging images -->
 <div id="lightbox" class="lightbox">
-  <span class="close">&times;</span>
-  <img class="lightbox-content" id="lightbox-img">
+  <div class="lightbox-wrapper">
+    <span class="close" onclick="document.getElementById('lightbox').style.display='none'">&times;</span>
+    <img id="lightbox-img" class="lightbox-content" src="" alt="Enlarged Image">
+  </div>
 </div>
 
 <!-- Footer -->
