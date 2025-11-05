@@ -142,6 +142,39 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("🍔 Hamburger clicked!");
     navLinks.classList.toggle("show");
   });
+
+  // Dropdown menu toggle (for mobile click functionality)
+  const dropdownLinks = document.querySelectorAll('.dropdown > a');
+  
+  dropdownLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      // Only prevent default and toggle on mobile/tablet
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        const dropdown = link.parentElement;
+        
+        // Close other dropdowns
+        document.querySelectorAll('.dropdown').forEach(otherDropdown => {
+          if (otherDropdown !== dropdown) {
+            otherDropdown.classList.remove('active');
+          }
+        });
+        
+        // Toggle current dropdown
+        dropdown.classList.toggle('active');
+      }
+      // On desktop, let the link work normally (hover still works)
+    });
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown').forEach(dropdown => {
+        dropdown.classList.remove('active');
+      });
+    }
+  });
 });
 
 
@@ -290,3 +323,115 @@ document.querySelectorAll('.popup-img').forEach(img => {
     lightbox.style.display = 'block';
   });
 });
+
+// === FAQ Accordion Logic ===
+document.addEventListener('DOMContentLoaded', () => {
+  const faqCategories = document.querySelectorAll('.faq-category-header');
+  
+  faqCategories.forEach(header => {
+    header.addEventListener('click', () => {
+      const category = header.parentElement;
+      const isActive = category.classList.contains('active');
+      
+      // Close all other categories
+      document.querySelectorAll('.faq-category').forEach(cat => {
+        cat.classList.remove('active');
+      });
+      
+      // Toggle current category
+      if (!isActive) {
+        category.classList.add('active');
+      }
+    });
+  });
+});
+
+// === Support Widget Logic ===
+document.addEventListener('DOMContentLoaded', () => {
+  const supportIcon = document.getElementById('supportIcon');
+  const supportFormContainer = document.getElementById('supportFormContainer');
+  const supportClose = document.getElementById('supportClose');
+  const supportForm = document.getElementById('supportForm');
+
+  // Toggle form visibility
+  if (supportIcon) {
+    supportIcon.addEventListener('click', () => {
+      supportFormContainer.classList.toggle('show');
+    });
+  }
+
+  // Close form
+  if (supportClose) {
+    supportClose.addEventListener('click', () => {
+      supportFormContainer.classList.remove('show');
+    });
+  }
+
+  // Handle form submission
+  if (supportForm) {
+    supportForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('supportName').value.trim();
+      const phone = document.getElementById('supportPhone').value.trim();
+      const email = document.getElementById('supportEmail').value.trim();
+      const question = document.getElementById('supportQuestion').value.trim();
+
+      // Validate phone number (Malaysian format)
+      const phoneRegex = /^01\d{8,9}$/;
+      if (!phoneRegex.test(phone)) {
+        alert('Sila masukkan nombor telefon yang sah (bermula dengan 01 dan 10-11 digit)');
+        return;
+      }
+
+      // Create WhatsApp message
+      const whatsappNumber = '601118558600'; // Your WhatsApp number (without + and spaces)
+      let message = `*Pertanyaan Baru dari Website SMTAA*\n\n`;
+      message += `👤 *Nama:* ${name}\n`;
+      message += `📱 *Telefon:* ${phone}\n`;
+      if (email) {
+        message += `📧 *Email:* ${email}\n`;
+      }
+      message += `\n❓ *Soalan:*\n${question}`;
+
+      // Encode message for URL
+      const encodedMessage = encodeURIComponent(message);
+      
+      // Open WhatsApp with pre-filled message
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+      window.open(whatsappURL, '_blank');
+
+      // Optional: Save to localStorage for record keeping
+      const inquiry = {
+        timestamp: new Date().toISOString(),
+        name: name,
+        phone: phone,
+        email: email,
+        question: question
+      };
+
+      // Get existing inquiries or create new array
+      let inquiries = JSON.parse(localStorage.getItem('smtaaInquiries') || '[]');
+      inquiries.push(inquiry);
+      localStorage.setItem('smtaaInquiries', JSON.stringify(inquiries));
+
+      // Reset form and close
+      supportForm.reset();
+      supportFormContainer.classList.remove('show');
+      
+      // Show success message
+      alert('Terima kasih! Soalan anda akan dibuka di WhatsApp. Sila hantar mesej tersebut.');
+    });
+  }
+
+  // Close form when clicking outside
+  document.addEventListener('click', (e) => {
+    if (supportFormContainer && 
+        supportFormContainer.classList.contains('show') &&
+        !supportFormContainer.contains(e.target) &&
+        !supportIcon.contains(e.target)) {
+      supportFormContainer.classList.remove('show');
+    }
+  });
+});
+
