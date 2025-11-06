@@ -10,6 +10,35 @@
 </head>
 <body>
 
+  <!-- Fullscreen Intro Video -->
+<div id="introScreen" style="
+  position: fixed;
+  inset: 0;
+  background: black;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+">
+  <video id="introVideo" playsinline style="width:100%; height:100%; object-fit:cover; display:none;">
+    <source src="logovd.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <button id="startButton" style="
+    background:#ffffff;
+    color:#000000;
+    border:none;
+    padding:12px 28px;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+  ">Tap to Start</button>
+</div>
+
   <!-- Navigation Bar -->
   <nav>
     <div class="logo">

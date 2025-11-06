@@ -480,3 +480,33 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+  const intro = document.getElementById("introScreen");
+  const video = document.getElementById("introVideo");
+  const startButton = document.getElementById("startButton");
+
+  // Check session
+  if (sessionStorage.getItem("introShown")) {
+    intro.style.display = "none";
+    document.body.style.overflow = "auto";
+  } else {
+    document.body.style.overflow = "hidden";
+    startButton.addEventListener("click", () => {
+      startButton.style.display = "none";
+      video.style.display = "block";
+      video.play().then(() => {
+        video.volume = 1.0;
+      }).catch(err => {
+        console.log("Autoplay blocked:", err);
+      });
+
+      video.addEventListener("ended", () => {
+        intro.style.transition = "opacity 1s ease";
+        intro.style.opacity = "0";
+        setTimeout(() => {
+          intro.style.display = "none";
+          document.body.style.overflow = "auto";
+          sessionStorage.setItem("introShown", "true");
+        }, 1000);
+      });
+    });
+  }
