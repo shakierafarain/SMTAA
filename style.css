@@ -78,6 +78,7 @@ body {
       overflow: hidden;
       color: white;
       display: flex;
+      flex-direction: column;  /* Added this line */
       justify-content: center;
       align-items: center;
       text-align: center;
@@ -102,9 +103,23 @@ body {
     }
 
     .card-box h2 {
-      position: relative;
-      z-index: 2;
-    }
+  position: relative;
+  z-index: 2;
+  font-size: 31px;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.card-box .subtitle {
+  position: relative;     /* Added this line */
+  z-index: 2;             /* Added this line */
+  font-size: 14px;
+  color: #ffffff;
+  opacity: 0.9;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.4;
+}
 
     /* Backgrounds for each box */
     .pengenalan { background: url("pengenalann.jpg") center/cover no-repeat; }
