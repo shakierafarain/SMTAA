@@ -194,23 +194,39 @@ function openModal(id) {
       });
     }
 
-// === Popup logic ===
+// === Updated Popup logic with Ads ===
 window.addEventListener('load', () => {
-  const popup = document.getElementById('userPopup');
+  const adsPopup = document.getElementById('adsPopup');
+  const closeAdsBtn = document.getElementById('closeAdsPopup');
+  const userPopup = document.getElementById('userPopup');
   const closeBtn = document.getElementById('closePopup');
   const form = document.getElementById('popupForm');
   const welcomePopup = document.getElementById('welcomePopup');
   const closeWelcome = document.getElementById('closeWelcome');
   const welcomeOk = document.getElementById('welcomeOk');
 
-  // Show popup only once per session
-  if (!sessionStorage.getItem('popupShown')) {
-    popup.style.display = 'flex';
+  // Show ads popup first if not shown in this session
+  if (!sessionStorage.getItem('adsShown')) {
+    adsPopup.style.display = 'flex';
+  } else if (!sessionStorage.getItem('popupShown')) {
+    // If ads already shown but user popup not shown, show user popup
+    userPopup.style.display = 'flex';
   }
+
+  // Close ads popup and show user registration popup
+  closeAdsBtn.addEventListener('click', () => {
+    adsPopup.style.display = 'none';
+    sessionStorage.setItem('adsShown', 'true');
+    
+    // Show user registration popup if not shown yet
+    if (!sessionStorage.getItem('popupShown')) {
+      userPopup.style.display = 'flex';
+    }
+  });
 
   // Close registration popup manually
   closeBtn.addEventListener('click', () => {
-    popup.style.display = 'none';
+    userPopup.style.display = 'none';
     sessionStorage.setItem('popupShown', 'true');
   });
 
@@ -261,7 +277,7 @@ window.addEventListener('load', () => {
     }
 
     // No errors -> proceed with previous flow
-    popup.style.display = 'none';
+    userPopup.style.display = 'none';
     welcomePopup.style.display = 'flex';
     sessionStorage.setItem('popupShown', 'true');
 
