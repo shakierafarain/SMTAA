@@ -402,7 +402,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // Create WhatsApp message
-      const whatsappNumber = '601118558600'; // Your WhatsApp number (without + and spaces)
+      const whatsappNumber = '601121005537'; // Your WhatsApp number (without + and spaces)
       let message = `*Pertanyaan Baru dari Website SMTAA*\n\n`;
       message += `👤 *Nama:* ${name}\n`;
       message += `📱 *Telefon:* ${phone}\n`;
